@@ -186,7 +186,7 @@ router.patch("/:adminName/login-data", auth, (req, res) => {
 // ! DELETE ADMIN
 router.delete("/:adminName", auth, (req, res) => {
   try {
-    Admin.remove({ name: req.params.adminName }).then(() => {
+    Admin.deleteOne({ name: req.params.adminName }).then(() => {
       res.json({
         msg: "Admin deleted",
       });
