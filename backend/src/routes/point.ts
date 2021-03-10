@@ -1,11 +1,9 @@
 import express from "express";
 import Point from "../models/Point";
-import mongoose from "mongoose";
 import auth from "../jwtMiddleware";
 import { v4 as uuid } from "uuid";
 
 const router = express.Router();
-const db = mongoose.connection;
 
 // ! ALL POINTS
 router.get("/", auth, (req, res) => {
