@@ -11,7 +11,7 @@ export interface IAdmin extends Document {
 const AdminSchema: Schema = new Schema({
   name: {
     type: String,
-    require: true,
+    required: true,
   },
   surname: {
     type: String,
@@ -21,11 +21,11 @@ const AdminSchema: Schema = new Schema({
   },
   login: {
     type: String,
-    require: true,
+    required: true,
   },
   password: {
     type: String,
-    require: true,
+    required: true,
   },
 });
 
