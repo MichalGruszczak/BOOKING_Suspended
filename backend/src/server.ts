@@ -21,6 +21,7 @@ app.use("/api/admin", require("./routes/admin"));
 app.use("/api/point", require("./routes/point"));
 app.use("/api/service", require("./routes/service"));
 app.use("/api/employee", require("./routes/employee"));
+app.use("/api/booking", require("./routes/booking"));
 
 // ! RUNNING SERVER
 const port = process.env.PORT || 5000;

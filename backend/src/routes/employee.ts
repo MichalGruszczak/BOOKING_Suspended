@@ -24,7 +24,7 @@ router.get("/", auth, (req, res) => {
 
       employees.forEach((employee) => {
         const newEmployee: IEmployee = {
-          id: uuid(),
+          id: employee.id,
           name: employee.name,
           surname: employee.surname,
           point: employee.point,

@@ -1,12 +1,11 @@
 import mongoose, { Schema, Document } from "mongoose";
-import { IService } from "../models/Service";
 
 export interface IPoint extends Document {
   id: string;
   name: string;
   street: string;
   employees: string[];
-  services: IService[];
+  services: string[];
   bookings: string[];
 }
 
