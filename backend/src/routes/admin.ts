@@ -113,6 +113,7 @@ router.post("/login", (req, res) => {
             if (err) throw err;
             res.json({
               msg: LoginResponse.AuthDone,
+              admin,
               token,
             });
           }
