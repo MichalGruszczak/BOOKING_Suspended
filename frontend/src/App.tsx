@@ -1,8 +1,10 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
-import ClientSection from "./components/Client/ClientSection";
-import AdminSection from "./components/Admin/AdminSection";
 import { AdminStore, AdminStoreProvider } from "./store/adminStore";
+import Loader from "./components/Common/Loader";
+
+const ClientSection = React.lazy(() => import("./components/Client/ClientSection"));
+const AdminSection = React.lazy(() => import("./components/Admin/AdminSection"));
 
 // ! STORE - INSTANCJE OF STORE CLASS
 const adminStore = new AdminStore();
@@ -14,10 +16,12 @@ const App: React.FC = () => {
         <Router>
           <NavLink to="/"></NavLink>
           <NavLink to="/admin"></NavLink>
-          <Switch>
-            <Route path="/" exact component={ClientSection}></Route>
-            <Route path="/admin" component={AdminSection}></Route>
-          </Switch>
+          <Suspense fallback={<Loader />}>
+            <Switch>
+              <Route path="/" exact component={ClientSection}></Route>
+              <Route path="/admin" component={AdminSection}></Route>
+            </Switch>
+          </Suspense>
         </Router>
       </div>
     </AdminStoreProvider>

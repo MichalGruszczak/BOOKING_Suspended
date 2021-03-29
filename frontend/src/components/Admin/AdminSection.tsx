@@ -1,8 +1,10 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { observer } from "mobx-react";
 import { useAdminStore } from "../../store/adminStore";
-import Login from "./Login";
-import Register from "./Register";
+import Loader from "../Common/Loader";
+
+const Login = React.lazy(() => import("./Login"));
+const Register = React.lazy(() => import("./Register"));
 
 const AdminSection: React.FC = observer(() => {
   const adminStore = useAdminStore();
@@ -17,9 +19,19 @@ const AdminSection: React.FC = observer(() => {
         </>
       );
     // * ADMIN EXIST IN DB - LOGIN RENDER
-    if (adminStore.isExist) return <Login />;
+    if (adminStore.isExist)
+      return (
+        <Suspense fallback={<Loader />}>
+          <Login />
+        </Suspense>
+      );
     // * ADMIN DOESN'T EXIST IN DB - REGISTER RENDER
-    else return <Register />;
+    else
+      return (
+        <Suspense fallback={<Loader />}>
+          <Register />
+        </Suspense>
+      );
   };
 
   return <section className="admin-wrapper">{renderByAdminExist()}</section>;
