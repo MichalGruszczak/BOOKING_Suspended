@@ -125,7 +125,7 @@ const Login: React.FC = observer(() => {
             <CircularProgress color="primary" />
           ) : (
             <Button onClick={handleSubmit} variant="contained" color="primary">
-              Zaloguj
+              Sign In
             </Button>
           )}
         </Paper>

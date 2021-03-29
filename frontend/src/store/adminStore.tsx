@@ -40,6 +40,38 @@ class AdminStore {
     this.isAdminAuthExist();
   }
 
+  // ! REGISTER ADMIN
+  registerAdmin = async (
+    name: string,
+    surname: string | "",
+    position: string | "",
+    login: string,
+    password: string
+  ) => {
+    const newAdminData = {
+      name,
+      surname,
+      position,
+      login,
+      password,
+    };
+    this.loading = true;
+
+    const response = await fetch("http://localhost:5000/api/admin/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newAdminData),
+    });
+
+    const data = await response.json();
+    this.loading = false;
+    if (data.msg === "Admin added") {
+      this.isExist = true;
+    }
+  };
+
   // ! CHECK FOR ADMIN EXIST AND AUTH - RUN IN CONSTRUCTOR
   isAdminAuthExist = async () => {
     const response = await fetch("http://localhost:5000/api/admin/");
