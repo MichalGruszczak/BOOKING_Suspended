@@ -3,6 +3,7 @@ import { useAdminStore } from "../../store/adminStore";
 import { observer } from "mobx-react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, TextField, Button, Paper, CircularProgress } from "@material-ui/core";
+import Title from "../Common/Title";
 
 // ! STYLES
 const useStyles = makeStyles((theme) => ({
@@ -136,7 +137,7 @@ const Register: React.FC = observer(() => {
         xs={10}
         className={classes.register__titleBar}
       >
-        Booking by M.G.
+        <Title destination="modal" />
       </Grid>
       <Grid item xs={10} className={classes.register__grid}>
         <Paper elevation={3} className={classes.register__paper}>

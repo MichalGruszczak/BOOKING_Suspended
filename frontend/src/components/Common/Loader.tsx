@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, CircularProgress } from "@material-ui/core";
+import Title from "./Title";
 
 // ! STYLES
 const useStyles = makeStyles((theme) => ({
@@ -12,15 +13,15 @@ const useStyles = makeStyles((theme) => ({
   },
 
   loader__title: {
-    marginBottom: "10px",
+    marginBottom: "15px",
   },
 
   loader__spinner: {
-    marginTop: "10px",
+    marginTop: "15px",
   },
 }));
 
-const Loader = () => {
+const Loader: React.FC = () => {
   const classes = useStyles();
 
   //   ! RETURN
@@ -28,13 +29,13 @@ const Loader = () => {
     <Grid container justify="center" alignContent="center" className={classes.loader}>
       <Grid
         item
-        xs={10}
+        xs={12}
         container
         justify="center"
         alignContent="center"
         className={classes.loader__title}
       >
-        Booking by M.G.
+        <Title destination="loader" />
       </Grid>
       <Grid
         item
@@ -45,7 +46,7 @@ const Loader = () => {
         className={classes.loader__spinner}
       >
         {" "}
-        <CircularProgress color="primary" />
+        <CircularProgress color="primary" size={50} thickness={4} />
       </Grid>
     </Grid>
   );
