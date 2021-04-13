@@ -101,6 +101,7 @@ const Login: React.FC = observer(() => {
         <Paper elevation={3} className={classes.login__paper}>
           <TextField
             id="login"
+            data-testid="login"
             label="Login"
             variant="outlined"
             required

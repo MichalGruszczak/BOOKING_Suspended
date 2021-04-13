@@ -73,7 +73,7 @@ const Register: React.FC = observer(() => {
   useEffect(() => {
     //
     if (!name) setNameDraftError("This field cannot be empty!");
-    if (name && name.length < 2) setNameDraftError("At least 2 characters required");
+    if (name && name.length < 2) setNameDraftError("At least 2 characters required!");
     if (name && name.length > 1) setNameDraftError("");
     //
     if (surname && surname.length < 2) {
@@ -86,7 +86,7 @@ const Register: React.FC = observer(() => {
     if ((position && position.length > 1) || !position) setPositionDraftError("");
     //
     if (!login) setLoginDraftError("This field cannot be empty!");
-    if (login && login.length < 2) setLoginDraftError("At least 2 characters required");
+    if (login && login.length < 2) setLoginDraftError("At least 2 characters required!");
     if (login && login.length > 1) setLoginDraftError("");
     //
     if (!password) setPasswordDraftError("This field cannot be empty!");
