@@ -85,6 +85,7 @@ const Login: React.FC = observer(() => {
       justify="center"
       alignContent="center"
       className={classes.login__wrapper}
+      data-testid="login_wrapper"
     >
       <Grid
         container
