@@ -5,6 +5,7 @@ import Loader from "../Common/Loader";
 
 const Login = React.lazy(() => import("./Login"));
 const Register = React.lazy(() => import("./Register"));
+const CommandCenter = React.lazy(() => import("./CommandCenter"));
 
 const AdminSection: React.FC = observer(() => {
   const adminStore = useAdminStore();
@@ -13,10 +14,9 @@ const AdminSection: React.FC = observer(() => {
     // * AUTH TRUE - CMS RENDER
     if (adminStore.isAuth)
       return (
-        <>
-          <h3>Main Admin Page</h3>
-          <button onClick={adminStore.logoutAdmin}>LOGOUT</button>
-        </>
+        <Suspense fallback={<Loader />}>
+          <CommandCenter />
+        </Suspense>
       );
     // * ADMIN EXIST IN DB - LOGIN RENDER
     if (adminStore.isExist)
