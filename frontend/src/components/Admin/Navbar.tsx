@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { NavLink, BrowserRouter as Router } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useAdminStore } from "../../store/adminStore";
 
 import {
@@ -58,15 +58,15 @@ interface NavButton {
 }
 
 const upMenu: NavItem[] = [
-  { text: "Obsługa rezerwacji", route: "/", icon: <DateRangeIcon /> },
-  { text: "Pracownicy", route: "/employees", icon: <PeopleIcon /> },
-  { text: "Punkty usługowe", route: "/points", icon: <StoreIcon /> },
-  { text: "Usługi", route: "/services", icon: <WorkIcon /> },
+  { text: "Obsługa rezerwacji", route: "/admin", icon: <DateRangeIcon /> },
+  { text: "Pracownicy", route: "/admin/employees", icon: <PeopleIcon /> },
+  { text: "Punkty usługowe", route: "/admin/points", icon: <StoreIcon /> },
+  { text: "Usługi", route: "/admin/services", icon: <WorkIcon /> },
 ];
 
 const downMenu: NavItem[] = [
-  { text: "Ustawienia", route: "/settings", icon: <SettingsIcon /> },
-  { text: "Admin", route: "/admin", icon: <PersonIcon /> },
+  { text: "Ustawienia", route: "/admin/settings", icon: <SettingsIcon /> },
+  { text: "Admin", route: "/admin/admin_data", icon: <PersonIcon /> },
 ];
 
 const otherMenu: NavButton[] = [
@@ -145,14 +145,12 @@ const Navbar: React.FC = () => {
   return (
     <div>
       <>
-        <Router>
-          <Button className={classes.menuBtn} variant="contained" onClick={toggleDrawer}>
-            {<MenuIcon />}
-          </Button>
-          <Drawer open={isOpen} onClose={toggleDrawer}>
-            {navItemsList()}
-          </Drawer>
-        </Router>
+        <Button className={classes.menuBtn} variant="contained" onClick={toggleDrawer}>
+          {<MenuIcon />}
+        </Button>
+        <Drawer open={isOpen} onClose={toggleDrawer}>
+          {navItemsList()}
+        </Drawer>
       </>
     </div>
   );

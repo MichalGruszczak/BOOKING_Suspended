@@ -18,7 +18,7 @@ const Header = () => {
 
   //   ! RETURN
   return (
-    <Grid className={classes.header__container} container xs={12}>
+    <Grid className={classes.header__container} container item xs={12}>
       <Navbar />
     </Grid>
   );

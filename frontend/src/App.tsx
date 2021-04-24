@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
+import { Switch, Route, NavLink, Redirect } from "react-router-dom";
 import { AdminStore, AdminStoreProvider } from "./store/adminStore";
 import Loader from "./components/Common/Loader";
 
@@ -13,16 +13,14 @@ const App: React.FC = () => {
   return (
     <AdminStoreProvider store={adminStore}>
       <div className="App">
-        <Router>
-          <NavLink to="/"></NavLink>
-          <NavLink to="/admin"></NavLink>
+        <NavLink to="/"></NavLink>
+        <NavLink to="/admin"></NavLink>
+        <Switch>
           <Suspense fallback={<Loader />}>
-            <Switch>
-              <Route path="/" exact component={ClientSection}></Route>
-              <Route path="/admin" component={AdminSection}></Route>
-            </Switch>
+            <Route path="/" exact component={ClientSection}></Route>
+            <Route path="/admin" component={AdminSection}></Route>
           </Suspense>
-        </Router>
+        </Switch>
       </div>
     </AdminStoreProvider>
   );
