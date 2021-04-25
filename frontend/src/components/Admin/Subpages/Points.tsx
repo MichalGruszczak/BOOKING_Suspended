@@ -7,6 +7,7 @@ const useStyles = makeStyles(() => ({
   points__wrapper: {
     paddingTop: "30px",
     backgroundColor: "pink",
+    height: "100vh",
   },
 }));
 
@@ -15,11 +16,14 @@ const Points: React.FC = () => {
   const classes = useStyles();
   // ! RETURN
   return (
-    <Grid className={classes.points__wrapper} container item xs={12}>
-      points points points points points points points points points points points points
-      points points points points points points points points points points points points
-      points points points points points points points points points points points points
-    </Grid>
+    <Grid
+      className={classes.points__wrapper}
+      container
+      item
+      xs={12}
+      justify="center"
+      alignItems="flex-start"
+    ></Grid>
   );
 };
 

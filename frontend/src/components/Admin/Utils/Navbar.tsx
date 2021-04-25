@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { NavLink } from "react-router-dom";
-import { useAdminStore } from "../../store/adminStore";
+import { useAdminStore } from "../../../store/adminStore";
 
 import {
   Drawer,

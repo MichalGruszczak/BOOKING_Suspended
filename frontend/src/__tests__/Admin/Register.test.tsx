@@ -1,6 +1,6 @@
 import { render, fireEvent, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import Register from "../../components/Admin/Register";
+import Register from "../../components/Admin/Auth/Register";
 
 afterEach(() => cleanup());
 

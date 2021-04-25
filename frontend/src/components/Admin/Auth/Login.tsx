@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useAdminStore } from "../../store/adminStore";
+import { useAdminStore } from "../../../store/adminStore";
 import { observer } from "mobx-react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, TextField, Button, Paper, CircularProgress } from "@material-ui/core";
-import Title from "../Common/Title";
+import Title from "../../Common/Title";
 
 // ! STYLES
 const useStyles = makeStyles((theme) => ({

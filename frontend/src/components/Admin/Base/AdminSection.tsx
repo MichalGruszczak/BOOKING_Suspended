@@ -1,10 +1,10 @@
 import React, { Suspense } from "react";
 import { observer } from "mobx-react";
-import { useAdminStore } from "../../store/adminStore";
-import Loader from "../Common/Loader";
+import { useAdminStore } from "../../../store/adminStore";
+import Loader from "../../Common/Loader";
 
-const Login = React.lazy(() => import("./Login"));
-const Register = React.lazy(() => import("./Register"));
+const Login = React.lazy(() => import("../Auth/Login"));
+const Register = React.lazy(() => import("../Auth/Register"));
 const CommandCenter = React.lazy(() => import("./CommandCenter"));
 
 const AdminSection: React.FC = observer(() => {

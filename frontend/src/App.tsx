@@ -1,10 +1,10 @@
 import React, { Suspense } from "react";
-import { Switch, Route, NavLink, Redirect } from "react-router-dom";
+import { Switch, Route, NavLink } from "react-router-dom";
 import { AdminStore, AdminStoreProvider } from "./store/adminStore";
 import Loader from "./components/Common/Loader";
 
 const ClientSection = React.lazy(() => import("./components/Client/ClientSection"));
-const AdminSection = React.lazy(() => import("./components/Admin/AdminSection"));
+const AdminSection = React.lazy(() => import("./components/Admin/Base/AdminSection"));
 
 // ! STORE - INSTANCJE OF STORE CLASS
 const adminStore = new AdminStore();

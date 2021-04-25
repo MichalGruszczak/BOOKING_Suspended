@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent, cleanup, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import Login from "../../components/Admin/Login";
+import Login from "../../components/Admin/Auth/Login";
 
 afterEach(() => cleanup());
 

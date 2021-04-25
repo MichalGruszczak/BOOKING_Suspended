@@ -1,6 +1,6 @@
 import { render, cleanup, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import AdminSection from "../../components/Admin/AdminSection";
+import AdminSection from "../../components/Admin/Base/AdminSection";
 import { renderHook } from "@testing-library/react-hooks";
 import { useAdminStore } from "../../store/adminStore";
 
