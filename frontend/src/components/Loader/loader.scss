@@ -1,0 +1,13 @@
+.loader {
+  width: 100%;
+  height: 100vh;
+  background-color: lightblue;
+
+  .loader__title {
+    margin-bottom: 15px;
+  }
+
+  .loader__spinner {
+    margin-top: 15px;
+  }
+}

@@ -1,0 +1,15 @@
+.navbar {
+  width: 250;
+
+  .navbar__navlink {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.navbar__menuBtn {
+  height: 30px;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
